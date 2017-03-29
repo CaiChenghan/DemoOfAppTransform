@@ -84,7 +84,7 @@
 }
 
 -(void)myButtonOneIsTouch{
-    NSURL *url = [NSURL URLWithString:@"App-Prefs:root=com.jiadai.DemoOfAppTransform"];
+    NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     if ([[UIApplication sharedApplication]canOpenURL:url]) {
         [[UIApplication sharedApplication]openURL:url options:[NSDictionary dictionary] completionHandler:^(BOOL success) {
             if (success) {

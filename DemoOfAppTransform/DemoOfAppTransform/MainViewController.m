@@ -84,7 +84,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.section == 0) {
         //普通跳转
-        NSDictionary *tpDic = [_dataArray objectAtIndex:indexPath.row];
+        NSArray *tpArray = [_dataArray objectAtIndex:indexPath.section];
+        NSDictionary *tpDic = [tpArray objectAtIndex:indexPath.row];
         NSURL *url = [NSURL URLWithString:[tpDic objectForKey:@"url"]];
         if ([[UIApplication sharedApplication]canOpenURL:url]) {
             [[UIApplication sharedApplication]openURL:url options:@{} completionHandler:^(BOOL success) {
